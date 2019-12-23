@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匯率走勢查詢</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">USD > TWD</h5>
+                        <canvas id="usdtwd"></canvas>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">CNY > TWD</h5>
+                        <canvas id="cnytwd"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">EUR > USD</h5>
+                        <canvas id="eurusd"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">USD > JPY</h5>
+                        <canvas id="usdjpy"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">GBP > USD</h5>
+                        <canvas id="gbpusd"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">AUD > USD</h5>
+                        <canvas id="audusd"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">USD > HKD</h5>
+                        <canvas id="usdhkd"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">USD > CNY</h5>
+                        <canvas id="usdcny"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">USD > ZAR</h5>
+                        <canvas id="usdzar"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">NZD > USD</h5>
+                        <canvas id="nzdusd"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/Chart.min.js"></script>
+<script>
+$(function() {
+
+    let url = 'https://quality.data.gov.tw/dq_download_json.php?nid=11339&md5_url=f2fdbc21603c55b11aead08c84184b8f'
+    $.post('./api/opendata_api.php', {url}, function(jsonData) {
+        let data = JSON.parse(jsonData)
+        let len = data.length
+
+        // console.log(data)
+
+        let dateList = []
+        data.forEach(function(content) {
+            dateList.push(content.日期)
+        })
+
+        let usdtwdList = []
+        let cnytwdList = []
+        let eurusdList = []
+        let usdjpyList = []
+        let gbpusdList = []
+        let audusdList = []
+        let usdhkdList = []
+        let usdcnyList = []
+        let usdzarList = []
+        let nzdusdList = []
+
+        data.forEach(function(content) {
+            usdtwdList.push(content['美元／新台幣'])
+            cnytwdList.push(content['人民幣／新台幣'])
+            eurusdList.push(content['歐元／美元'])
+            usdjpyList.push(content['美元／日幣'])
+            gbpusdList.push(content['英鎊／美元'])
+            audusdList.push(content['澳幣／美元'])
+            usdhkdList.push(content['美元／港幣'])
+            usdcnyList.push(content['美元／人民幣'])
+            usdzarList.push(content['美元／南非幣'])
+            nzdusdList.push(content['紐幣／美元'])
+        })
+
+        rate('#usdtwd', 'USD > TWD', usdtwdList)
+        rate('#cnytwd', 'CNY > TWD', cnytwdList)
+        rate('#eurusd', 'EUR > USD', eurusdList)
+        rate('#usdjpy', 'CNY > JPY', usdjpyList)
+        rate('#gbpusd', 'GBP > USD', gbpusdList)
+        rate('#audusd', 'AUD > USD', audusdList)
+        rate('#usdhkd', 'USD > HKD', usdhkdList)
+        rate('#usdcny', 'USD > CNY', usdcnyList)
+        rate('#usdzar', 'USD > ZAR', usdzarList)
+        rate('#nzdusd', 'NZD > USD', nzdusdList)
+
+        // 折線圖
+        function rate(canvasID, labelName, dollarList) {
+            let line = $(canvasID)
+            let myLineChart = new Chart(line, {
+                type: 'line',
+                data: {
+                    labels: dateList,
+                    datasets: [{
+                        label: labelName, 
+                        data: dollarList,
+                        borderColor: '#DC143C',
+                        // backgroundColor: 'black',
+                        fill: false,
+                        borderWidth: 5,
+                        // lineTension: 0
+                    }]
+                },
+                options: {
+                    // title: {
+                    //     text: 'USD -> TWD',
+                    //     display: true
+                    // },
+                    scales: {
+                        xAxes: [{
+                            display: false
+                        }],
+                        yAxes: [{
+                            display: false
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    },
+                    elements: {
+                        point:{
+                            radius: 0
+                        }
+                    }
+                }
+            })
+        }
+    })
+})
+</script>
+</body>
+</html>

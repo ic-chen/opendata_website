@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匯率走勢查詢</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+    <canvas id="lineChart"></canvas>
+    
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/Chart.min.js"></script>
+<script>
+$(function() {
+
+    let url = 'https://quality.data.gov.tw/dq_download_json.php?nid=11339&md5_url=f2fdbc21603c55b11aead08c84184b8f'
+    $.post('./api/opendata_api.php', {url}, function(jsonData) {
+        let data = JSON.parse(jsonData)
+        let len = data.length
+
+        // console.log(data)
+
+        let dateList = []
+        data.forEach(function(content) {
+            let dateForeach = content.日期
+            dateList.push(dateForeach)
+        })
+
+        let usdtwdList = []
+        data.forEach(function(content) {
+            let usdtwdForeach = content['美元／新台幣']
+            usdtwdList.push(usdtwdForeach)
+        })
+
+        // 折線圖
+        let line = $('#lineChart')
+        let myLineChart = new Chart(line, {
+            type: 'line',
+            data: {
+                labels: dateList,
+                datasets: [{
+                    label: '美元/新台幣', 
+                    data: usdtwdList,
+                    borderColor: '#DC143C',
+                    backgroundColor: 'black',
+                    fill: false,
+                    borderWidth: 10,
+                    lineTension: 0
+                }]
+            },
+            options: {
+                title: {
+                    text: '美元/新台幣匯率走勢',
+                    display: true
+                }
+            }
+        })
+
+    })
+})
+</script>
+</body>
+</html>
