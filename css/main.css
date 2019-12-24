@@ -1,0 +1,57 @@
+#usdtwdTitle, #cnytwdTitle, #eurusdTitle, #usdjpyTitle, #gbpusdTitle, #audusdTitle, #usdhkdTitle, #usdcnyTitle, #usdzarTitle, #nzdusdTitle {
+    color: #e91e63;
+}
+body {
+    font-family: var(--font-family-sans-serif), 'Microsoft JhengHei';
+}
+.bg-gray {
+    background-color: #f2f2f2 !important;
+}
+a {
+    color: #212529;
+}
+a:hover {
+    color: #86A8E7;
+    text-decoration: none;
+}
+.btn-primary {
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+.btn-primary:hover {
+    background-color: #b81a4e;
+    border-color: #b81a4e;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    background-color: #92163f;
+    border-color: #92163f;
+    box-shadow: 0 0 0 0.2rem #e91e63;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #92163f;
+    border-color: #92163f;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    background-color: #b81a4e;
+    border-color: #b81a4e;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #e91e63;
+}
+
+@media (min-width: 900px) {
+    .modal-dialog {
+      max-width: 800px;
+    }
+}
+
+/* .modal-body {
+    width: auto !important;
+} */
