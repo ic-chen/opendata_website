@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">
                             USD > TWD
-                            <button type="button" name="usdtwd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            <button type="button" data-name="usdtwd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
                             詳細資料 <i class="fas fa-angle-double-right"></i>
                             </button>
                         </h5>
@@ -33,7 +33,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">CNY > TWD</h5>
+                        <h5 class="card-title">
+                            CNY > TWD
+                            <button type="button" data-name="cnytwd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="cnytwdTitle" class="h3"></span>
                         <canvas id="cnytwd"></canvas>
                     </div>
@@ -42,7 +47,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">EUR > USD</h5>
+                        <h5 class="card-title">
+                            EUR > USD
+                            <button type="button" data-name="eurusd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="eurusdTitle" class="h3"></span>
                         <canvas id="eurusd"></canvas>
                     </div>
@@ -51,7 +61,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">USD > JPY</h5>
+                        <h5 class="card-title">
+                            USD > JPY
+                            <button type="button" data-name="usdjpy" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="usdjpyTitle" class="h3"></span>
                         <canvas id="usdjpy"></canvas>
                     </div>
@@ -60,7 +75,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">GBP > USD</h5>
+                        <h5 class="card-title">
+                            GBP > USD
+                            <button type="button" data-name="gbpusd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="gbpusdTitle" class="h3"></span>
                         <canvas id="gbpusd"></canvas>
                     </div>
@@ -69,7 +89,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">AUD > USD</h5>
+                        <h5 class="card-title">
+                            AUD > USD
+                            <button type="button" data-name="audusd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="audusdTitle" class="h3"></span>
                         <canvas id="audusd"></canvas>
                     </div>
@@ -78,7 +103,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">USD > HKD</h5>
+                        <h5 class="card-title">
+                            USD > HKD
+                            <button type="button" data-name="usdhkd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="usdhkdTitle" class="h3"></span>
                         <canvas id="usdhkd"></canvas>
                     </div>
@@ -87,7 +117,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">USD > CNY</h5>
+                        <h5 class="card-title">
+                            USD > CNY
+                            <button type="button" data-name="usdcny" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="usdcnyTitle" class="h3"></span>
                         <canvas id="usdcny"></canvas>
                     </div>
@@ -96,7 +131,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">USD > ZAR</h5>
+                        <h5 class="card-title">
+                            USD > ZAR
+                            <button type="button" data-name="usdzar" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="usdzarTitle" class="h3"></span>
                         <canvas id="usdzar"></canvas>
                     </div>
@@ -105,7 +145,12 @@
             <div class="col-12 col-sm-12 col-md-6">
                 <div class="card my-3">
                     <div class="card-body">
-                        <h5 class="card-title">NZD > USD</h5>
+                        <h5 class="card-title">
+                            NZD > USD
+                            <button type="button" data-name="nzdusd" class="btn btn-primary float-right" data-toggle="modal" data-target="#rateModal">
+                            詳細資料 <i class="fas fa-angle-double-right"></i>
+                            </button>
+                        </h5>
                         <span id="nzdusdTitle" class="h3"></span>
                         <canvas id="nzdusd"></canvas>
                     </div>
@@ -126,6 +171,18 @@
         </div>
         <div class="modal-body">
             <canvas id="dollarTrend"></canvas>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">日期</th>
+                    <th scope="col">匯率</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
@@ -249,52 +306,125 @@ $(function() {
             })
         }
 
-        // Modal 匯率折線圖函式
-        $('button').on('click',function(){
-            switch($(this).attr('name')) {
+        // ---------------- Modal 顯示詳細匯率資訊 ------------------ //
+        $('button.float-right').on('click',function(){
+            let name
+            switch($(this).attr('data-name')) {
                 case 'usdtwd':
-                modalRate('USD > TWD', usdtwdList)
+                name = 'USD > TWD'
+                rateTitle(name)
+                modalRate(name, usdtwdList)
+                fillRate('美元／新台幣')
+                break;
+                case 'cnytwd':
+                name = 'CNY > TWD'
+                rateTitle(name)
+                modalRate(name, cnytwdList)
+                fillRate('人民幣／新台幣')
+                break;
+                case 'eurusd':
+                name = 'EUR > USD'
+                rateTitle(name)
+                modalRate(name, eurusdList)
+                fillRate('歐元／美元')
+                break;
+                case 'usdjpy':
+                name = 'USD > JPY'
+                rateTitle(name)
+                modalRate(name, usdjpyList)
+                fillRate('美元／日幣')
+                break;
+                case 'gbpusd':
+                name = 'GBP > USD'
+                rateTitle(name)
+                modalRate(name, gbpusdList)
+                fillRate('英鎊／美元')
+                break;
+                case 'audusd':
+                name = 'AUD > USD'
+                rateTitle(name)
+                modalRate(name, audusdList)
+                fillRate('澳幣／美元')
+                break;
+                case 'usdhkd':
+                name = 'USD > HKD'
+                rateTitle(name)
+                modalRate(name, usdhkdList)
+                fillRate('美元／港幣')
+                break;
+                case 'usdcny':
+                name = 'USD > CNY'
+                rateTitle(name)
+                modalRate(name, usdcnyList)
+                fillRate('美元／人民幣')
+                break;
+                case 'usdzar':
+                name = 'USD > ZAR'
+                rateTitle(name)
+                modalRate(name, usdzarList)
+                fillRate('美元／南非幣')
+                break;
+                case 'nzdusd':
+                name = 'NZD > USD'
+                rateTitle(name)
+                modalRate(name, nzdusdList)
+                fillRate('紐幣／美元')
                 break;
             }
 
-            function modalRate(labelName, dollarList) {
-                let line = document.getElementById('dollarTrend').getContext('2d')
-                let gradientStroke = line.createLinearGradient(0, 0, 800, 0)
-                gradientStroke.addColorStop(0.3, '#e91e63')
-                gradientStroke.addColorStop(0.6, '#86A8E7')
-                gradientStroke.addColorStop(1, '#5FFBF1')
+            // 標題
+            function rateTitle(txt) {
+                $('#rateModalTitle').empty()
+                $('#rateModalTitle').text(txt)
+            }
 
-                let myLineChart = new Chart(line, {
+            // 在表格中填入匯率
+            function fillRate(dollar) {
+                $('tbody').empty()
+                data.forEach(function(res) {
+                    $('tbody').append(
+                    `<tr>
+                    <td>${res.日期}</td>
+                    <td>${res[dollar]}</td>
+                    </tr>`
+                    )
+                })
+            }
+
+            function modalRate(labelsName, dollarsList) {
+                $('#dollarTrend').empty()
+                let modalLine = document.getElementById('dollarTrend').getContext('2d')
+                let gradientStroke2 = modalLine.createLinearGradient(0, 0, 750, 0)
+                gradientStroke2.addColorStop(0.2, '#e91e63')
+                gradientStroke2.addColorStop(0.5, '#86A8E7')
+                gradientStroke2.addColorStop(1, '#5FFBF1')
+
+                let myLineChart = new Chart(modalLine, {
                     type: 'line',
                     data: {
                         labels: dateList,
                         datasets: [{
-                            label: labelName, 
-                            data: dollarList,
+                            label: labelsName, 
+                            data: dollarsList,
 
-                            borderColor: gradientStroke,
-                            pointBorderColor: gradientStroke,
-                            pointBackgroundColor: gradientStroke,
-                            pointHoverBackgroundColor: gradientStroke,
-                            pointHoverBorderColor: gradientStroke,
+                            borderColor: gradientStroke2,
+                            pointBorderColor: gradientStroke2,
+                            pointBackgroundColor: gradientStroke2,
+                            pointHoverBackgroundColor: gradientStroke2,
+                            pointHoverBorderColor: gradientStroke2,
 
                             fill: false,
                             borderWidth: 5,
-                            // lineTension: 0
                         }]
                     },
                     options: {
-                        // title: {
-                        //     text: 'USD -> TWD',
-                        //     display: true
-                        // },
                         legend: {
                             display: false
                         },
                     }
                 })
-            }
 
+            }
         })
 
     })
