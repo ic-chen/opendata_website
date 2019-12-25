@@ -16,7 +16,7 @@
 <body class="bg-gray">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -30,7 +30,7 @@
                     </div>
                   </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -128,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -170,7 +170,8 @@
             </button>
         </div>
         <div class="modal-body">
-            <canvas id="dollarTrend"></canvas>
+            <div id="rateTrend">
+            </div>
             <br>
             <table class="table table-striped">
                 <thead>
@@ -392,11 +393,14 @@ $(function() {
             }
 
             function modalRate(labelsName, dollarsList) {
-                $('#dollarTrend').empty()
-                let modalLine = document.getElementById('dollarTrend').getContext('2d')
+                $('#rateTrend').empty()
+                $('#rateTrend').append(
+                    `<canvas id="rateTrendCanvas"></canvas>`
+                )
+                let modalLine = document.getElementById('rateTrendCanvas').getContext('2d')
                 let gradientStroke2 = modalLine.createLinearGradient(0, 0, 750, 0)
                 gradientStroke2.addColorStop(0.2, '#e91e63')
-                gradientStroke2.addColorStop(0.5, '#86A8E7')
+                gradientStroke2.addColorStop(0.7, '#86A8E7')
                 gradientStroke2.addColorStop(1, '#5FFBF1')
 
                 let myLineChart = new Chart(modalLine, {
