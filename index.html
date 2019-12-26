@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Primary Meta Tags -->
     <title>匯率走勢查詢</title>
+    <meta name="title" content="匯率走勢查詢">
+    <meta name="description" content="簡易的匯率走勢查詢網頁，資料來源為「政府資料開放平台」。">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="匯率走勢查詢">
+    <meta property="og:description" content="簡易的匯率走勢查詢網頁，資料來源為「政府資料開放平台」。">
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="匯率走勢查詢">
+    <meta property="twitter:description" content="簡易的匯率走勢查詢網頁，資料來源為「政府資料開放平台」。">
+    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/all.css">
@@ -13,10 +32,51 @@
     </style>
 </head>
 
-<body class="bg-gray">
+<body class="bg-gray" style="padding-top: 70px">
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="#">
+        <img src="./img/favicon.ico" width="30" height="30" alt="回頂端">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            快速前往
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#usdtwd">USD > TWD</a>
+            <a class="dropdown-item" href="#cnytwd">CNY > TWD</a>
+            <a class="dropdown-item" href="#eurusd">EUR > USD</a>
+            <a class="dropdown-item" href="#usdjpy">CNY > JPY</a>
+            <a class="dropdown-item" href="#gbpusd">GBP > USD</a>
+            <a class="dropdown-item" href="#audusd">AUD > USD</a>
+            <a class="dropdown-item" href="#usdhkd">USD > HKD</a>
+            <a class="dropdown-item" href="#usdcny">USD > CNY</a>
+            <a class="dropdown-item" href="#usdzar">USD > ZAR</a>
+            <a class="dropdown-item" href="#nzdusd">NZD > USD</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#black">
+                <img src="./img/black.png" width="20" height="20" alt="black">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#white">
+                <img src="./img/white.png" width="20" height="20" alt="white">
+            </a>
+        </li>
+        </ul>
+    </div>
+</nav>
+
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -30,7 +90,7 @@
                     </div>
                   </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -44,7 +104,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -58,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -72,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -86,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -100,7 +160,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -114,7 +174,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -128,7 +188,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -142,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4">
+            <div class="col-12 col-sm-6 col-md-5">
                 <div class="card my-3">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -158,6 +218,9 @@
             </div>
         </div>
     </div>
+
+<!-- 回到頂端 -->
+<a href="javascript:" id="return-to-top"><i class="text-dark fas fa-chevron-circle-up"></i></a>
 
 <!-- Modal -->
 <div class="modal fade" id="rateModal" tabindex="-1" role="dialog" aria-labelledby="rateModalTitle" aria-hidden="true">
@@ -197,6 +260,52 @@
 <script src="./js/Chart.min.js"></script>
 <script>
 $(function() {
+
+    // ===== Scroll to Top ==== 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+            $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        } else {
+            $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+        }
+    });
+
+    // 回頂端
+    $('img[alt="回頂端"], #return-to-top').click(function() {
+        $('body,html').animate({
+            scrollTop : 0
+        }, 200);
+    })
+
+    // 白 -> 黑
+    $('img[alt="black"]').on('click', function() {
+        $('nav.navbar').removeClass('navbar-light bg-white').addClass('navbar-dark bg-dark')
+        $('body').removeClass('bg-gray').addClass('bg-dark')
+
+        $('div.card').css({'background-color': '#003567', 'color': '#fff'})
+        $('button.float-right').removeClass('btn-primary').addClass('btn-secondary')
+
+        $('.modal-content').css({'background-color': '#003567', 'color': '#fff'})
+        $('.modal table').addClass('table-dark')
+        $('span[aria-hidden="true"]').css({'color': '#fff', 'text-shadow': '0 1px 0 #000'})
+
+        $('#return-to-top i').removeClass('text-dark').addClass('text-secondary')
+    })
+
+    // 黑 -> 白
+    $('img[alt="white"]').on('click', function() {
+        $('nav.navbar').removeClass('navbar-dark bg-dark').addClass('navbar-light bg-white')
+        $('body').removeClass('bg-dark').addClass('bg-gray')
+
+        $('div.card').css({'background-color': '#fff', 'color': '#003567'})
+        $('button.float-right').removeClass('btn-secondary').addClass('btn-primary')
+
+        $('.modal-content').css({'background-color': '#fff', 'color': '#212529'})
+        $('.modal table').removeClass('table-dark')
+        $('span[aria-hidden="true"]').css({'color': '#000', 'text-shadow': '0 1px 0 #fff'})
+
+        $('#return-to-top i').removeClass('text-secondary').addClass('text-dark')
+    })
 
     let url = 'https://quality.data.gov.tw/dq_download_json.php?nid=11339&md5_url=f2fdbc21603c55b11aead08c84184b8f'
     $.post('./api/opendata_api.php', {url}, function(jsonData) {
@@ -371,6 +480,8 @@ $(function() {
                 modalRate(name, nzdusdList)
                 fillRate('紐幣／美元')
                 break;
+                default:
+                break;
             }
 
             // 標題
@@ -402,6 +513,14 @@ $(function() {
                 gradientStroke2.addColorStop(0.2, '#e91e63')
                 gradientStroke2.addColorStop(0.7, '#86A8E7')
                 gradientStroke2.addColorStop(1, '#5FFBF1')
+
+                if($('.modal table').hasClass('table-dark')) {
+                    Chart.defaults.global.defaultFontColor = '#fff'
+                }else{
+                    Chart.defaults.global.defaultFontColor = '#666'
+                }
+
+                Chart.defaults.scale.gridLines.color = gradientStroke2
 
                 let myLineChart = new Chart(modalLine, {
                     type: 'line',
